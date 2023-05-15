@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const isMobile = false;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1 className="text-6xl font-bold text-center">Install My PWA</h1>
+      <button>Installer notre application</button>
+      <span>
+        Notre site web est installable sous la forme d'une application{" "}
+        {isMobile ? "mobile" : "desktop"}.
+      </span>
+      {!isMobile && (
+        <span>
+          Pour une meilleure expérience avec notre application, téléchargez
+          Google Chrome !{/* Lien vers Google Chrome ? */}
+        </span>
+      )}
+      {/* Logo des navigateurs */}
+      <span>Compatible avec :</span>
+      <div className="flex flex-row">
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <span>
+        Grâce à l'installation de l'application sur votre appareil il vous sera
+        possible d'utiliser de nouvelles fonctionnalitées tels que :
+      </span>
+      {/* Liste des fonctionnalitées détectées en fonction de l'appareil */}
+      <ul>
+        <li>Notification</li>
+        <li>Bluetooth</li>
+        <li>NFC</li>
+        <li>Geolocalisation</li>
+        <li>...</li>
+      </ul>
     </>
-  )
+  );
 }
-
-export default App
